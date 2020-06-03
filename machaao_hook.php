@@ -115,7 +115,7 @@ function sendGenericMessage($userId){
                     "elements" => [array(
                         "title" => "rift",
                         "subtitle" => "Next-generation virtual reality",
-                        "image_url" => "http://messengerdemo.parseapp.com/img/rift.png",
+                        "image_url" => "https://i.imgur.com/nGF1K8f.jpg",
                         "buttons" => [
                             array(
                                 "type" => "web_url",
@@ -132,7 +132,7 @@ function sendGenericMessage($userId){
                     array(
                         "title" => "touch",
                         "subtitle" => "Your Hands, Now in VR",
-                        "image_url" => "http://messengerdemo.parseapp.com/img/touch.png",
+                        "image_url" => "https://i.imgur.com/nGF1K8f.jpg",
                         "buttons" => [array(
                             "type" => "web_url",
                             "url" => "https://www.oculus.com/en-us/touch/",
