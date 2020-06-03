@@ -63,6 +63,7 @@ try {
 
                 $user = getUser($m);
 
+
                 switch ($message) {
                     case 'generic':
                         sendGenericMessage($userId);
@@ -101,10 +102,62 @@ function getUser($messaging) {
     }
 }
 
-function sendTextMessage($userID, $messageText) {
+function sendGenericMessage($userId){
+    $messageData = array(
+        "identifier" => "BROADCAST_FB_QUICK_REPLIES",
+        "users" => [$userId],
+        "source" => "firebase",
+        "message" => array(
+            "attachment" => array(
+                "type" => "template",
+                "payload" => array(
+                    "template_type" => "generic",
+                    "elements" => [array(
+                        "title" => "rift",
+                        "subtitle" => "Next-generation virtual reality",
+                        "image_url" => "http://messengerdemo.parseapp.com/img/rift.png",
+                        "buttons" => [
+                            array(
+                                "type" => "web_url",
+                                "url" => "https://www.oculus.com/en-us/rift/",
+                                "title" => "Open Web URL"
+                            ),
+                            array(
+                                "type" => "postback",
+                                "url" => "Call Postback",
+                                "title" => "Payload for first bubble"
+                            )
+                        ]
+                    ),
+                    array(
+                        "title" => "touch",
+                        "subtitle" => "Your Hands, Now in VR",
+                        "image_url" => "http://messengerdemo.parseapp.com/img/touch.png",
+                        "buttons" => [array(
+                            "type" => "web_url",
+                            "url" => "https://www.oculus.com/en-us/touch/",
+                            "title" => "Open Web URL"
+                        ),
+                        array(
+                            "type" => "postback",
+                            "url" => "Call Postback",
+                            "title" => "Payload for second bubble"
+                        )],
+                    )],
+                )
+            )
+        )
+    );
+
+    $messageDataJson = json_encode($messageData, true);
+
+    callSendAPI($messageDataJson); 
+}
+
+function sendTextMessage($userId, $messageText) {
     $messageData = array(
         "identifier" => 'BROADCAST_FB_QUICK_REPLIES',
-        "users" => [$userID],
+        "users" => [$userId],
         "source" => "firebase",
         "message" => array(
             "text" => $messageText
@@ -128,7 +181,8 @@ function callSendAPI($messageData){
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
         'Content-Type: application/json',  
-        'api_token: <-- Please update with your api_token -->'
+        // 'api_token: <-- Please update with your api_token -->'
+        'api_token: a8090020-a088-11ea-b4c2-d7945c16ae81'
         )                                                                       
     );
 
