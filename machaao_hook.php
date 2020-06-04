@@ -23,12 +23,13 @@ if(isset($_SERVER['HTTP_API_TOKEN'])){
     $secretKey = $_SERVER['HTTP_API_TOKEN'];
 }
 
+error_log($_SERVER['HTTP_USER_ID']);
+error_log($_SERVER['HTTP_API_TOKEN']);
+error_log($_SERVER['HTTP_MACHAAO_USER_ID']);
+
 if(isset($_SERVER['HTTP_USER_ID'])){
     $userId = $_SERVER['HTTP_USER_ID'];
 }
-
-echo "<pre>";
-print_r($_SERVER);
 
 if(!$body || !$userId){
     http_response_code(500);
