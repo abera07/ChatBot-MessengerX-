@@ -197,6 +197,5 @@ function callSendAPI($messageData){
     curl_close($ch);
 }
 
-error_log(ob_get_clean(), 4);
 
 
