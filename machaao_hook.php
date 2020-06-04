@@ -23,10 +23,6 @@ if(isset($_SERVER['HTTP_BOT_TOKEN'])){
     $secretKey = $_SERVER['HTTP_BOT_TOKEN'];
 }
 
-// error_log($_SERVER['HTTP_USER_ID']);
-// error_log($_SERVER['HTTP_API_TOKEN']);
-error_log($_SERVER['HTTP_MACHAAO_USER_ID']);
-error_log("This is a secret key" . $secretKey);
 
 if(isset($_SERVER['HTTP_MACHAAO_USER_ID'])){
     $userId = $_SERVER['HTTP_MACHAAO_USER_ID'];
