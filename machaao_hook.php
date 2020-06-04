@@ -27,6 +27,9 @@ if(isset($_SERVER['HTTP_USER_ID'])){
     $userId = $_SERVER['HTTP_USER_ID'];
 }
 
+echo "<pre>";
+print_r($_SERVER);
+
 if(!$body || !$userId){
     http_response_code(500);
 
