@@ -42,7 +42,52 @@ curl --location --request POST 'https://ganglia-dev.machaao.com/v1/bots/<YOUR AP
 --header 'api_token: <YOUR API-TOKEN>' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "url": "<YOUR URL>/webhooks/machaao/incoming",
+    "url": "<YOUR URL>/mahaao_hook.php",
+    "description": "<YOUR BOT DESCRIPTION>",
+    "displayName": "<YOUR BOT NAME>"
+    }'
+```
+
+# Run on Heroku #
+-----------------
+We are assuming you have access to a [heroku account](https://heroku.com)
+and have installed heroku command line client for your OS.
+
+# Login to Heroku #
+-------------------
+```
+heroku login
+```
+Create a new app on Heroku and note down your heroku app name
+
+### Deploy the app ###
+```
+heroku create
+```
+Create an app on Heroku, which prepares Heroku to receive your source code
+
+Now deploy your code
+
+```
+git push heroku master
+```
+
+### View Heroku logs ###
+
+```
+heroku logs --tail
+```
+Heroku treats logs as streams of time-ordered events aggregated from the output streams of all your app and Heroku components, providing a single channel for all of the events.
+
+## Update your webhook ##
+-------------------------
+Update your bot url on MACHAAO with the heroku url as shown below to continue development
+```
+curl --location --request POST 'https://ganglia-dev.machaao.com/v1/bots/<YOUR API-TOKEN> \
+--header 'api_token: <YOUR API-TOKEN>' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "url": "<Your_Heroku_App_Name>.herokuapp.com/machaao_hook.php",
     "description": "<YOUR BOT DESCRIPTION>",
     "displayName": "<YOUR BOT NAME>"
     }'
