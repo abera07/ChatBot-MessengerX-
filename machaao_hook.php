@@ -1,4 +1,7 @@
 <?php
+/**
+ * @author Solution Fuse <hello@solutionfuse.com>
+ */
 
 session_start();
 
