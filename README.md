@@ -1,6 +1,11 @@
 ![Image of Solution Fuse](SolutionFuse/solutionfuse-header.png)
 
 # Solution Fuse PHP Sample Bot on Machaao Platform
+This bot sample code is provided by [Solution Fuse](https://www.solutionfuse.com) 
+to help provide the broader community and those interested in bot development a 
+starting point to getting a bot up and running in PHP while utilizing the 
+Machaao MessengerX Platform. For more information or inquiries, please reach out 
+to [tridoan@solutionfuse.com](mailto:tridoan@solutionfuse.com)
 
 **messengerx-php-sample** : This is an echo bot which shows the basic usage
 of the MACHAAO send message API, it contains the php code base to
