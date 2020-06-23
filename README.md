@@ -1,4 +1,6 @@
-# Machaao PHP Sample Bot
+![Image of Solution Fuse](SolutionFuse/solutionfuse-header.png)
+
+# Solution Fuse PHP Sample Bot on Machaao Platform
 
 **messengerx-php-sample** : This is an echo bot which shows the basic usage
 of the MACHAAO send message API, it contains the php code base to
@@ -7,7 +9,7 @@ get you started
 Register your bot url
 ---------------------
 
-Contact us for registering your bot url and we will issue you an
+Contact Machaao for registering your bot url and they will issue you an
 api\_token (connect@machaao.com)
 
 Install NGROK - For Dynamic DNS (Required)
@@ -22,7 +24,7 @@ ngrok http 5005
 
 Run your PHP script
 -------------------
-* Clone the php script from the repo https://gitlab.com/solutionfuse-randd/messengerx-php-sample.git
+* Clone the php script from this repo
 * Move to your root directory
 * run 
 ``` 
